@@ -14,12 +14,30 @@ namespace ConsoleProgram
     public class Class1
     {
         private const string URL = "https://swapi.co/api/";
+        
+        private string endpoint = Console.ReadLine();
 
         static void Main(string[] args)
         {
+
+            Console.WriteLine(@"                  ________________.  ___     .______  ");
+            Console.WriteLine(@"                 /                | /   \    |   _  \");
+            Console.WriteLine(@"                |   (-----|  |----`/  ^  \   |  |_)  |");
+            Console.WriteLine(@"                 \   \    |  |    /  /_\  \  |      /");
+            Console.WriteLine(@"            .-----)   |   |  |   /  _____  \ |  |\  \-------.");
+            Console.WriteLine(@"            |________/    |__|  /__/     \__\| _| `.________|");
+            Console.WriteLine(@"             ____    __    ____  ___     .______    ________.");
+            Console.WriteLine(@"             \   \  /  \  /   / /   \    |   _  \  /        |");
+            Console.WriteLine(@"              \   \/    \/   / /  ^  \   |  |_)  ||   (-----`");
+            Console.WriteLine(@"               \            / /  /_\  \  |      /  \   \");
+            Console.WriteLine(@"                \    /\    / /  _____  \ |  |\  \---)   |");
+            Console.WriteLine(@"                 \__/  \__/ /__/     \__\|__| `._______/");
+            Console.Write(new string('\n', 10)); 
+            Console.WriteLine("Getting api data from the star wars api...");
+
             Task t = new Task(GetSwapi);
             t.Start();
-            Console.WriteLine("Getting data...");
+
             Console.ReadLine();
         }
 
@@ -34,7 +52,11 @@ namespace ConsoleProgram
             {
                     string result = await content.ReadAsStringAsync();
                     Console.WriteLine(result);
-            }
+                    Console.Beep();
+                    Console.Beep();
+                    Console.Beep();
+                    Console.WriteLine("tada!");
+                }
             else
             {
                 Console.WriteLine("{0} ({1})", (int)response.StatusCode, response.ReasonPhrase);
