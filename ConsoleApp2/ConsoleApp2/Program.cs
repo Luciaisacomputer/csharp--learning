@@ -43,7 +43,7 @@ namespace ConsoleProgram
 
         static async void GetSwapi()
         {
-            string api = "https://swapi.co/api/";
+            string api = "https://swapi.co/api/people/1";
             using (HttpClient client = new HttpClient())
             using (HttpResponseMessage response = await client.GetAsync(api))
             using (HttpContent content = response.Content)
