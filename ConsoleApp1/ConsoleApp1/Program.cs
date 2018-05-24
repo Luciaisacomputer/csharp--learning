@@ -8,8 +8,7 @@ namespace ConsoleApp1
         {
             double num;
             Console.WriteLine("Enter a number so we can fizz buzz: ");
-            num = Convert.ToInt32(Console.ReadLine());
-
+            num = Convert.ToDouble(Console.ReadLine());
 
             int i = 1;
             while (i <= num)
